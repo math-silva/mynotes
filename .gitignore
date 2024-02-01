@@ -1,0 +1,6 @@
+# Djangofiles
+migrations/
+__pycache__/
+
+# env
+env/
