@@ -89,7 +89,7 @@ const NotePage = () => {
       </div>
       <div className="font-semibold">
         {loading ? (
-          <p>Carregando...</p>
+          <p>Loading...</p>
         ) : note ? (
           <textarea
             onChange={e => setNote({ ...note, body: e.target.value })}
@@ -98,7 +98,7 @@ const NotePage = () => {
             value={note?.body}
           ></textarea>
         ) : (
-          <p>A nota de id {id} não existe!</p>
+          <p>The note {id} does not exist</p>
         )}
       </div>
     </div>
