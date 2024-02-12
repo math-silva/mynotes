@@ -2,6 +2,7 @@ from django.shortcuts import render
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
 
+from .utils import getNotesList, getNoteDetail, createNote, updateNote, deleteNote
 
 from .models import Note
 from .serializers import NoteSerializer
@@ -43,14 +44,18 @@ def getRoutes(request):
     ]
     return Response(routes)
 
-@api_view(['GET'])
+@api_view(['GET', 'POST'])
 def getNotes(request):
-    notes = Note.objects.all()
-    serializer = NoteSerializer(notes, many=True)
-    return Response(serializer.data)
+    if request.method == 'GET':
+        return getNotesList(request)
+    if request.method == 'POST':
+        return createNote(request)
     
-@api_view(['GET'])
+@api_view(['GET', 'PUT', 'DELETE'])
 def getNote(request, pk):
-    note = Note.objects.get(id=pk)
-    serializer = NoteSerializer(note, many=False)
-    return Response(serializer.data)
+    if request.method == 'GET':
+        return getNoteDetail(request, pk)
+    if request.method == 'PUT':
+        return updateNote(request, pk)
+    if request.method == 'DELETE':
+        return deleteNote(request, pk)
