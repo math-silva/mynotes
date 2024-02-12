@@ -1,7 +1,5 @@
-import React from 'react';
-
 const Header = () => {
-  return <div>This is the header</div>;
+  return <div className="text-2xl mb-8 font-bold">My Notes</div>;
 };
 
 export { Header };
