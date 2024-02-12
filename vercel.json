@@ -8,10 +8,6 @@
         {
             "src": "/(.*)",
             "dest": "mynotes/wsgi.py"
-        },
-        {
-            "src": "/static/(.*)",
-            "dest": "frontend/build/static/$1"
         }
     ]
 }
