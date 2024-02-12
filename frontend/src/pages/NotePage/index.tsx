@@ -71,6 +71,7 @@ const NotePage = () => {
 
   useEffect(() => {
     getNote();
+    document.title = `Note ${id}`;
   }, [id]);
 
   return (

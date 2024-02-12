@@ -41,6 +41,7 @@ const NotesListPage = () => {
 
   useEffect(() => {
     getNotes();
+    document.title = 'My Notes';
   }, []);
 
   return (
