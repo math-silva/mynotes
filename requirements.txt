@@ -4,3 +4,4 @@ django-cors-headers==4.3.1
 djangorestframework==3.14.0
 pytz==2023.4
 sqlparse==0.4.4
+whitenoise==6.5.0
