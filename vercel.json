@@ -10,7 +10,7 @@
             "dest": "mynotes/wsgi.py"
         },
         {
-            "src": "/frontend/build/static/(.*)",
+            "src": "/staticfiles/(.*)",
             "dest": "mynotes/static/$1"
         }
     ]
